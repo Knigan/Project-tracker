@@ -14,7 +14,7 @@ class IndexView(View):
 
 class BugReportsListView(ListView):
     model = BugReport
-    template_name = 'quality_control/bugs_list.html'
+    template_name = 'quality_control/bugreports_list.html'
 
 class BugReportDetailView(DetailView):
     model = BugReport
@@ -34,7 +34,7 @@ class BugReportCreateView(CreateView):
     model = BugReport
     form_class = BugReportForm
     template_name = 'quality_control/bugreport_create.html'
-    success_url = reverse_lazy('quality_control:bugs_list')
+    success_url = reverse_lazy('quality_control:bugreports_list')
 
     def form_valid(self, form):
         form.instance.project = get_object_or_404(Project, pk=self.kwargs['project_id'])
@@ -59,7 +59,7 @@ class BugReportUpdateView(UpdateView):
     form_class = BugReportForm
     template_name = 'quality_control/bugreport_update.html'
     pk_url_kwarg = 'bugreport_id'
-    success_url = reverse_lazy('quality_control:bugs_list')
+    success_url = reverse_lazy('quality_control:bugreports_list')
 
 class FeatureRequestUpdateView(UpdateView):
     model = FeatureRequest
@@ -72,7 +72,7 @@ class BugReportDeleteView(DeleteView):
     model = BugReport
     template_name = 'quality_control/bugreport_confirm_delete.html'
     pk_url_kwarg = 'bugreport_id'
-    success_url = reverse_lazy('quality_control:bugs_list')
+    success_url = reverse_lazy('quality_control:bugreports_list')
 
 class FeatureRequestDeleteView(DeleteView):
     model = FeatureRequest
