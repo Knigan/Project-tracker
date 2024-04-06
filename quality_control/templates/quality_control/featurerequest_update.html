@@ -1,7 +1,7 @@
 {% extends 'base/base.html' %}
 
 {% block content %}
-    <h2>Изменение запроса об улучшении {{ feature_request.title }}</h2>
+    <h2>Изменение запроса об улучшении {{ featurerequest.title }}</h2>
     <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}

@@ -1,10 +1,12 @@
 {% extends 'base/base.html' %}
 
 {% block content %}
+    {% load crispy_forms_tags %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
     <h2>Создать новый проект</h2>
     <form method="POST">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Сохранить</button>
+        {% crispy form %}
     </form>
 {% endblock %}

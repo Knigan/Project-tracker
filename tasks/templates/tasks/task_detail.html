@@ -3,8 +3,8 @@
 {% block content %}
     <a href="{% url 'tasks:update_task' project_id=task.project.id task_id=task.id %}">Изменить задачу</a>
     <p><a href="{% url 'tasks:delete_task' project_id=task.project.id task_id=task.id%}" onclick="return confirm('Вы уверены, что хотите удалить эту задачу?');">Удалить задачу</a></p>
-    <p><a href="{% url 'quality_control:bugreport_create' project_id=task.project.id task_id=task.id %}">Сообщить о новой ошибке</a></p>
-    <p><a href="{% url 'quality_control:feature_request_create' project_id=task.project.id task_id=task.id %}">Предложить новое улучшение</a></p>
+    <p><a href="{% url 'quality_control:create_bugreport' project_id=task.project.id task_id=task.id %}">Сообщить о новой ошибке</a></p>
+    <p><a href="{% url 'quality_control:create_featurerequest' project_id=task.project.id task_id=task.id %}">Предложить новое улучшение</a></p>
 
 
     <h1>{{ task.name }}</h1>

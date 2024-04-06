@@ -5,7 +5,7 @@
 
     <ul>
         {% for feature in featurerequest_list %}
-            <li><a href="{% url 'quality_control:feature_detail' feature.id %}">{{ feature.title }}</a> - {{ feature.status }} (Priority: {{ feature.priority }})</li>
+            <li><a href="{% url 'quality_control:featurerequest_detail' feature.id %}">{{ feature.title }}</a> - {{ feature.status }} (Priority: {{ feature.priority }})</li>
         {% empty %}
             <li>Никаких улучшений пока нет</li>
         {% endfor %}
